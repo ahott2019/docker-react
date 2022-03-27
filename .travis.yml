@@ -1,0 +1,9 @@
+sudo: required
+service:
+  - docker
+
+before_install:
+  - docker build -t ahott2029/docker-react -f Dockerfile.dev .
+
+scripts:
+  - docker run ahott2019/docker-react npm run test -- --coverage
